@@ -1,0 +1,19 @@
+<h1>Login#index</h1>
+<p>Find me in app/views/login/index.html.erb</p>
+
+<h1> Generate from the command </h1>
+
+<h3> Howdy </h3>
+
+<h1>Log in</h1>
+
+<%= form_for @user do |f| %>
+
+  <p>Email Address:</p>
+  // <%= f.email_field_tag :email %>
+  
+  <p>Password:</p>
+  // <%= f.number_field_tag :password %>
+
+  <%= f.submit "Login" %>
+<% end %>
