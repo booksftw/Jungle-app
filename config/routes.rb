@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :login
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  # resources :sessions 
   resources :register
   resources :users
 
