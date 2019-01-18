@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
 
   def show
+    # @isEmpty = Order.LineItem.count
+    @cart_count = cart.count
+
   end
 
   def add_item

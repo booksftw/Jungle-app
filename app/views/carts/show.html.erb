@@ -1,9 +1,11 @@
 <section class="cart-show">
 
   <header class="page-header">
-    <h1>My Cart</h1>
+    <h1>My Cart HOWDY <%=  %></h1>
   </header>
 
+
+<% if @cart_count > 0%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +50,10 @@
       <% end %>
     </div>
   </div>
+<% else %> 
+  <h1> <a href="/"> Cart is empty click this link to go back to hoem page </a></h1>
+<% end %>
+
+  
 
 </section>
