@@ -1,2 +1,19 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+# Duplicated from register
+<%= form_for :user, url: '/users' do |f| %>
+  <p>First Name:</p>
+  <%= f.text_field :first_name %>
+
+  <p>Last Name:</p>
+  <%= f.text_field :last_name %>
+
+  <p>Email Address:</p>
+  <%= f.email_field :email %>
+  
+  <p> Password: </p>
+  <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+
+  <br/><br/>
+  <%= f.submit "Submit" %>
+<% end %>

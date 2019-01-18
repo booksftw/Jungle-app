@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :login
   resources :register
+  resources :users
 
   resources :products, only: [:index, :show]
 
