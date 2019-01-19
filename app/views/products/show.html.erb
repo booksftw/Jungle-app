@@ -30,17 +30,35 @@
   <br/><br/>
   <div>
     <h3> Reviews</h3>
-    <% @product.reviews.each do | r | %>
+    <% @product.reviews.reverse_each do | r | %>
     <p> 
       User Id: <%= r.user_id %> </br>
       Description: <%= r.description %> </br>
       Rated <%= r.rating %></br>
+      
     </p>
+    <% if @user == r.user_id %>
+          <%= button_to "delete", "/products/#{@product.id}/reviews/#{r.id}", :method => :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
+    
     <% end %>
 
     # ADD FORM UNDER HERE
-    <h2>  <%= @user %>  </h2>    
-    <h3> Add your own review </h3>
+  
+    <div>
+      <%= form_for [@product, @review] do |f|%>
+          <%= f.label :rating %>
+          <%= f.select :rating, options_for_select([["Select One", ""], 1, 2, 3, 4, 5]), :class => 'genForm_dropBox' %>
+          <%= f.label :review %>
+          <%= f.text_field :description %>
+        <%= f.submit "Review this product" %>
+    <% end %>
+    </div>
+
+
+    
+
+
   </div>
 
 </section>

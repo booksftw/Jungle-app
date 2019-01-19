@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find params[:id]
     # @user = "SHOW Test User"
-    @user = current_user# Get logged in user
+    @review = Review.new()
+    @user = session[:user_id]# Get logged in user
   end
 
 end
